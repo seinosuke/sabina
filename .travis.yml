@@ -1,0 +1,16 @@
+language: ruby
+
+rvm:
+  - 2.0.0
+  - 2.3.0
+
+before_install: gem install bundler -v 1.11.2
+
+bundler_args: --without development --jobs=2
+
+script: 
+  - bundle exec rspec
+
+branches:
+  only:
+    - master
