@@ -1,6 +1,6 @@
 # Sabina
 
-[![Gem Version](https://badge.fury.io/rb/sabina.svg)](https://badge.fury.io/rb/sabina) 
+[![Gem Version](https://badge.fury.io/rb/sabina.svg)](https://badge.fury.io/rb/sabina) [![Build Status](https://travis-ci.org/seinosuke/sabina.svg?branch=master)](https://travis-ci.org/seinosuke/sabina)  
 Sabina is a machine learning library.  
 This gem provides tools for Multi-Layer Perceptrons and Auto-Encoders.  
 
