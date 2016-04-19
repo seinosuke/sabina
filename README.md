@@ -1,5 +1,6 @@
 # Sabina
 
+[![Gem Version](https://badge.fury.io/rb/sabina.svg)](https://badge.fury.io/rb/sabina) 
 Sabina is a machine learning library.  
 This gem provides tools for Multi-Layer Perceptrons and Auto-Encoders.  
 
@@ -187,7 +188,7 @@ Run [examples/example_mp_02/main.rb](https://github.com/seinosuke/sabina/blob/ma
 
 Run [examples/example_ae_01/main.rb](https://github.com/seinosuke/sabina/blob/master/examples/example_ae_01/main.rb).  
 
-![ae_learning_process.gif](https://github.com/seinosuke/sabina/blob/master/examples/example_ae_01/mp_learning_process.gif)
+![ae_learning_process.gif](https://github.com/seinosuke/sabina/blob/master/examples/example_ae_01/ae_learning_process.gif)
 
 
 ## Contributing
