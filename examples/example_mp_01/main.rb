@@ -147,7 +147,7 @@ Open3.popen3('gnuplot') do |gp_in, gp_out, gp_err|
 
     # progress bar
     puts " error : #{log.last}"
-    puts " [#{("*"*(t / (LOOP_NUM / 10))).ljust(10, " ")}]"
+    puts " [#{("*"*((t.to_f / LOOP_NUM)*10).to_i).ljust(9, " ")}]"
     print "\e[2A"; STDOUT.flush;
   end
 

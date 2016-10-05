@@ -30,7 +30,7 @@ describe Sabina::MultilayerPerceptron do
       end
     end
 
-    context "when the number of @layers size is less than three" do
+    context "when the number of @layers is less than three" do
       it "raise RuntimeError" do
         options = {
           :layers => [
