@@ -3,7 +3,7 @@ require 'open3'
 require 'sabina'
 
 DIM = 2
-LOOP_NUM = 100
+EPOCH = 100
 xrange = [-2.2, 2.2]
 yrange = [-2.2, 2.2]
 
@@ -76,7 +76,7 @@ Open3.popen3('gnuplot') do |gp_in, gp_out, gp_err|
   log = []
   x_mat = Matrix.columns( original_data.map { |data| data[:x] } )
 
-  LOOP_NUM.times do |t|
+  EPOCH.times do |t|
     sae.learn
     log << sae.error(original_data)
     gp_in.puts "set multiplot layout 1, 2"
@@ -112,7 +112,7 @@ Open3.popen3('gnuplot') do |gp_in, gp_out, gp_err|
 
     # progress bar
     puts " error : #{log.last}"
-    puts " [#{("*"*((t.to_f / LOOP_NUM)*10).to_i).ljust(9, " ")}]"
+    puts " [#{("*"*((t.to_f / EPOCH)*10).to_i).ljust(9, " ")}]"
     print "\e[2A"; STDOUT.flush;
   end
 
