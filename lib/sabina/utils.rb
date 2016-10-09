@@ -1,5 +1,5 @@
 module Sabina
-  module Util
+  module Utils
     def box_muller(s = 1.0)
       r_1 = rand
       r_2 = rand

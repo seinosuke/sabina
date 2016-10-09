@@ -2,7 +2,7 @@ require 'matrix'
 require 'csv'
 
 require "sabina/version"
-require "sabina/util"
+require "sabina/utils"
 require "sabina/layer"
 require "sabina/layer/base_layer"
 require "sabina/configuration"
