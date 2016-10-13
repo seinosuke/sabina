@@ -8,8 +8,8 @@ module Sabina
       table = CSV.table(file_name)
       k = table[:label].max + 1
       table.map do |data|
-        x = (data.size-1).times.map { |d| data["x#{d}".to_sym] }
-        d = Array.new(k) { |i| i == data[:label] ? 1 : 0 }
+        x = data[0..-2]
+        d = Array.new(k) { 0 }.tap { |ary| ary[data[:label]] = 1 }
         { :x => x, :d => d }
       end
     end
@@ -46,8 +46,8 @@ module Sabina
 
     # Check if `@layers` is valid.
     def check_layers
-      if layers.size < 3
-        raise "The number of layers size must be more than three."
+      if @layers.size < 3
+        raise "The number of layers must be more than three."
       end
     end
 
@@ -62,7 +62,7 @@ module Sabina
       end
     end
 
-    # A learning step consists of 
+    # A learning step consists of
     # a forward propagation, a backward propagation
     # and updating the weights of this multi-layer perceptron.
     def learn

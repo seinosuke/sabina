@@ -31,7 +31,7 @@ require 'sabina'
 
 DIM = 2
 K = 3
-LOOP_NUM = 100
+EPOCH = 100
 
 training_data = Sabina::MultilayerPerceptron.load_csv('training_data.csv')
 
@@ -48,7 +48,7 @@ options = {
 
 mp = Sabina::MultilayerPerceptron.new(options)
 
-LOOP_NUM.times do |t|
+EPOCH.times do |t|
   mp.learn
   error = mp.error(training_data)
   puts " error : #{error}"
@@ -63,7 +63,7 @@ Example of normal usage is shown below. Use `SparseAutoEncoder` class when the n
 require 'sabina'
 
 DIM = 2
-LOOP_NUM = 10
+EPOCH = 100
 
 original_data = Sabina::AutoEncoder.load_csv('training_data.csv')
 
@@ -80,7 +80,7 @@ options = {
 
 sae = Sabina::SparseAutoEncoder.new(options)
 
-LOOP_NUM.times do |t|
+EPOCH.times do |t|
   sae.learn
   error = sae.error(original_data)
   puts " error : #{error}"
@@ -102,7 +102,7 @@ x0,x1,label
 
 This is a example for two-dimensional vector data. For example, if you want to input D-dimensional vector data, write `x0,x1,...,x(D-1),label` at the first line.
 The column of `label` is used for a cluster id. For example, if there are three clusters in training data, a number at the `label` column will be 0, 1 or 2.  
-  
+
 When you prepare a CSV file, load the file as shown below.
 
 ```ruby
@@ -191,6 +191,12 @@ Run [examples/example_ae_01/main.rb](https://github.com/seinosuke/sabina/blob/ma
 ![ae_learning_process.gif](https://github.com/seinosuke/sabina/blob/master/examples/example_ae_01/ae_learning_process.gif)
 
 
+## MNIST Example
+
+[https://github.com/seinosuke/sabina_mnist_example](https://github.com/seinosuke/sabina_mnist_example)  
+
+![sabina_demo_01.gif](https://github.com/seinosuke/sabina_mnist_example/blob/master/images/sabina_demo_01.gif)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/seinosuke/sabina. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
@@ -199,4 +205,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/seinos
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

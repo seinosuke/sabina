@@ -16,7 +16,7 @@ module Sabina::Layer
 
       # (J, I)
       @W = Array.new(@J) do
-        Array.new(@I) { Sabina::Util.box_muller }
+        Array.new(@I) { Sabina::Utils.box_muller }
       end.tap { |ary| break Matrix[*ary] }
     end
 

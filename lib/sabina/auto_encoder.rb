@@ -4,7 +4,7 @@ module Sabina
     def self.load_csv(file_name)
       table = CSV.table(file_name)
       table.map do |data|
-        x = (data.size-1).times.map { |d| data["x#{d}".to_sym] }
+        x = data[0..-2]
         { :x => x, :d => x }
       end
     end
@@ -13,11 +13,11 @@ module Sabina
     def check_layers
       super
 
-      if layers.size != 3
+      if @layers.size != 3
         raise "The number of layers must be three."
       end
 
-      if layers.first.size != layers.last.size
+      if @layers.first.size != @layers.last.size
         raise "The number of units of the input layer must be equal to that of the output layer."
       end
     end

@@ -4,7 +4,7 @@ require 'sabina'
 
 DIM = 2
 K = 2
-LOOP_NUM = 100
+EPOCH = 100
 xrange = [-2.2, 2.2]
 yrange = [-2.2, 2.2]
 
@@ -84,7 +84,7 @@ Open3.popen3('gnuplot') do |gp_in, gp_out, gp_err|
   end
   x_mat = Matrix.columns( tmp_data )
 
-  LOOP_NUM.times do |t|
+  EPOCH.times do |t|
     mp.learn
     log << mp.error(training_data)
     gp_in.puts "set multiplot layout 1, 2"
@@ -132,7 +132,7 @@ Open3.popen3('gnuplot') do |gp_in, gp_out, gp_err|
     # Training Error
     ##################################################
     gp_in.puts "set label 2 center at screen 0.79,0.9 'Training Error' font 'Helvetica,22'"
-    gp_in.puts "set xrange [0:#{LOOP_NUM}]"
+    gp_in.puts "set xrange [0:#{EPOCH}]"
     gp_in.puts "set yrange [0:#{log.first + 10}]"
     gp_in.puts "set xlabel 'iteration number'"
     gp_in.puts "set ylabel 'training error'"
@@ -147,7 +147,7 @@ Open3.popen3('gnuplot') do |gp_in, gp_out, gp_err|
 
     # progress bar
     puts " error : #{log.last}"
-    puts " [#{("*"*(t / (LOOP_NUM / 10))).ljust(10, " ")}]"
+    puts " [#{("*"*((t.to_f / EPOCH)*10).to_i).ljust(9, " ")}]"
     print "\e[2A"; STDOUT.flush;
   end
 
