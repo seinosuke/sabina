@@ -191,6 +191,12 @@ Run [examples/example_ae_01/main.rb](https://github.com/seinosuke/sabina/blob/ma
 ![ae_learning_process.gif](https://github.com/seinosuke/sabina/blob/master/examples/example_ae_01/ae_learning_process.gif)
 
 
+## MNIST Example
+
+[https://github.com/seinosuke/sabina_mnist_example](https://github.com/seinosuke/sabina_mnist_example)  
+
+![sabina_demo_01.gif](https://github.com/seinosuke/sabina_mnist_example/blob/master/images/sabina_demo_01.gif)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/seinosuke/sabina. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
